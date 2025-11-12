@@ -1,14 +1,18 @@
 const texto = document.querySelector('.letreiro-texto');
 const container = document.querySelector('.letreiro-container');
 
-let posicao = -texto.clientWidth;
-const velocidade = 2.5; // ajustada para velocidade agradável
+// Posição inicial: fora da tela à direita
+let posicao = container.clientWidth;
+
+// Velocidade (positiva = movimento para a esquerda)
+const velocidade = 2.5;
 
 function animar() {
-  posicao += velocidade;
+  posicao -= velocidade; // subtrai para mover para a esquerda
 
-  if (posicao > container.clientWidth) {
-    posicao = -texto.clientWidth;
+  // Se o texto saiu totalmente à esquerda, reinicia à direita
+  if (posicao < -texto.clientWidth) {
+    posicao = container.clientWidth;
   }
 
   texto.style.left = posicao + 'px';
