@@ -1,0 +1,34 @@
+/* Estilo geral do corpo */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;            /* altura total da tela */
+  background-color: #111;   /* fundo escuro */
+  color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Área do letreiro */
+.letreiro-container {
+  position: relative;
+  width: 80%;              /* largura da área */
+  height: 100px;           /* altura do letreiro */
+  border: 3px solid #00ffcc;
+  overflow: hidden;         /* esconde o texto fora da área */
+  background-color: #222;
+  padding: 20px;            /* espaço livre em volta do texto */
+  text-align: center;       /* alinhamento */
+  box-sizing: border-box;
+}
+
+/* Texto do letreiro */
+.letreiro-texto {
+  position: absolute;
+  white-space: nowrap;      /* impede quebra de linha */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 2px 2px 5px #000;
+}
