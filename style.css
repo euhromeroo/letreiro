@@ -3,34 +3,45 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;             /* altura total da tela */
-  background-color: #111;    /* fundo escuro */
-  color: #fff;
+  height: 100vh;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+
+  /* Fundo animado com gradiente */
+  background: linear-gradient(-45deg, #ff6e6e, #6ec1ff, #00ffcc, #ffde6e);
+  background-size: 400% 400%;
+  animation: fundoAnimado 15s ease infinite;
+}
+
+/* Animação do fundo */
+@keyframes fundoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Área do letreiro */
 .letreiro-container {
   position: relative;
-  width: 90%;                /* largura da área do letreiro */
-  height: 120px;             /* altura do letreiro */
-  overflow: hidden;          /* impede o texto de sair visualmente */
-  background-color: transparent; /* sem bordas, sem fundo */
-  padding: 30px;             /* espaço livre em volta do texto */
-  text-align: center;        /* centraliza o conteúdo */
+  width: 90%;
+  height: 150px;             /* altura maior */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3); /* leve transparência para destacar o texto */
+  padding: 30px;
+  text-align: center;
   box-sizing: border-box;
+  border-radius: 15px;       /* cantos arredondados */
 }
 
 /* Texto do letreiro */
 .letreiro-texto {
   position: absolute;
-  white-space: nowrap;       /* impede quebra de linha */
-  font-size: 3rem;           /* tamanho do texto */
-  font-weight: 700;
-  color: #00ffcc;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  font-size: 4rem;           /* fonte maior */
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
   left: 0;
   top: 50%;
-  transform: translateY(-50%); /* centraliza verticalmente */
+  transform: translateY(-50%);
 }
