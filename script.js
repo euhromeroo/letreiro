@@ -1,30 +1,28 @@
-// Seleciona os elementos HTML
+// Seleciona elementos
 const texto = document.querySelector('.letreiro-texto');
 const container = document.querySelector('.letreiro-container');
 
-// Variáveis de controle
-let posicao = 0;           // posição inicial do texto
-let direcao = 1;           // 1 = direita, -1 = esquerda
-const velocidade = 2;      // controla a velocidade do movimento
+// Posição inicial à esquerda
+let posicao = -texto.clientWidth;
 
-// Função de animação
+// Velocidade de movimento (ajustável)
+const velocidade = 2; // nem muito rápido, nem muito lento
+
 function animar() {
-  const limiteDireita = container.clientWidth - texto.clientWidth;
+  // Atualiza a posição
+  posicao += velocidade;
 
-  // Atualiza a posição do texto
-  posicao += direcao * velocidade;
-
-  // Inverte a direção ao atingir as bordas
-  if (posicao >= limiteDireita || posicao <= 0) {
-    direcao *= -1;
+  // Se o texto saiu totalmente da tela, reinicia da esquerda
+  if (posicao > container.clientWidth) {
+    posicao = -texto.clientWidth;
   }
 
-  // Aplica a posição no CSS
+  // Aplica o movimento
   texto.style.left = posicao + 'px';
 
-  // Chama novamente para criar animação contínua
+  // Continua a animação
   requestAnimationFrame(animar);
 }
 
-// Inicia o movimento
+// Inicia o letreiro
 animar();
