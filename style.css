@@ -7,17 +7,17 @@ body {
   background-color: #111;    /* fundo escuro */
   color: #fff;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'serifada', sans-serif;
 }
 
 /* Área do letreiro */
 .letreiro-container {
   position: relative;
-  width: 80%;                /* largura da área */
+  width: 100%;                /* largura da área */
   height: 150px;             /* altura do letreiro */
   overflow: hidden;          /* esconde o texto fora da área */
   background-color: transparent; /* sem borda, sem fundo */
-  padding: 20px;             /* espaço livre em volta do texto */
+  padding: 50px;             /* espaço livre em volta do texto */
   text-align: center;
   box-sizing: border-box;
 }
@@ -26,8 +26,8 @@ body {
 .letreiro-texto {
   position: absolute;
   white-space: nowrap;       /* impede quebra de linha */
-  font-size: 3rem;           /* letras maiores */
-  font-weight: 700;
-  color: #00ffcc;
+  font-size: 5rem;           /* letras maiores */
+  font-weight: 900;
+  color: #ff6e6e;
   text-shadow: 3px 3px 8px #000;
 }
